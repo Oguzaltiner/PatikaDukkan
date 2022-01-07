@@ -1,11 +1,21 @@
-import React from 'react'
-import { SafeAreaView,Text } from 'react-native';
-const App =()=>{
+import React from 'react';
+import {SafeAreaView, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+import Products from './pages/Products';
+import Detail from './pages/Detail';
+
+const Stack = createStackNavigator();
+const Router = () => {
   return (
-    <SafeAreaView>
-      <Text>
-        Hello ShopCHOP
-      </Text>
-    </SafeAreaView>
-  )
-}
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="ProductsPage" component={Products} />
+        <Stack.Screen name="DetailPage" component={Detail} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default Router;
