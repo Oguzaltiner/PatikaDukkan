@@ -5,34 +5,23 @@ import Config from 'react-native-config';
 import envs from '../../config/env';
 
 import ProductCard from '../../components/ProductCard';
+import useFetch from '../../hooks/useFetch/useFetch';
+
+import Error from '../../components/Error';
+import Loading from '../../components/Loading';
+
 
 const Products = () => {
   // console.log(envs);
   const {API_URL} = envs;
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const {data: productData} = await axios.get(API_URL);
-      setData(productData);
-      setLoading(false);
-    } catch (error) {
-      setError(error.message);
-      setLoading(false);
-    }
-  };
+  
+  const{loading,data,error}  = useFetch(API_URL);
   const renderProduct = ({item}) => <ProductCard product={item} />;
   if (loading) {
-    return <ActivityIndicator size="large" />;
+    return <Loading/>
   }
   if (error) {
-    return <Text>{error}</Text>
+    return <Error/>
   }
   return (
     <SafeAreaView>
