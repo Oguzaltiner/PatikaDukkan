@@ -20,7 +20,7 @@ import Loading from '../../components/Loading';
 
 const Products = ({navigation}) => {
   // console.log(envs);
-  const {API_URL} = envs;
+  const {API_PRODUCT_URL} = envs;
   const handleProductSelect = id => {
     navigation.navigate('DetailPage', {id});
   };
@@ -28,13 +28,13 @@ const Products = ({navigation}) => {
     const newData = data.filter(f => f.category == item);
     setNewData(newData);
   };
-  const {loading, data, error} = useFetch(API_URL);
+  const {loading, data, error} = useFetch(API_PRODUCT_URL);
   const [categoryList, setCategoryList] = useState([]);
   const [newData, setNewData] = useState([]);
   const fetchCategoryData = async () => {
     try {
       const {data: responseCategoryData} = await axios.get(
-        API_URL + '/categories',
+        API_PRODUCT_URL + '/categories',
       );
       setCategoryList(responseCategoryData);
     } catch (error) {}

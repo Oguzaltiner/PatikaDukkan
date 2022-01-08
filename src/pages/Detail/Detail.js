@@ -11,7 +11,7 @@ const Detail = ({route}) => {
   const {id} = route.params;
   const {API_URL} = envs;
   console.log(API_URL+"/"+id);
-  const {loading,error,data} = useFetch(API_URL+"/"+id);
+  const {loading,error,data} = useFetch(API_PRODUCT_URL+"/"+id);
   if (loading) {
     return <Loading />;
   }
