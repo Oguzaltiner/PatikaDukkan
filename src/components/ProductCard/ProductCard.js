@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableWithoutFeedback} from 'react-native';
+import {View,ScrollView, Text, Image, TouchableWithoutFeedback} from 'react-native';
 
 import styles from './ProductCard.style';
 const ProductCard = ({product, onSelect}) => {

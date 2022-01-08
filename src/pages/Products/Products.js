@@ -78,5 +78,8 @@ const styles = StyleSheet.create({
   categoryList: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    borderWidth:1,
+    margin:3,
+    borderRadius:15,
   },
 });
