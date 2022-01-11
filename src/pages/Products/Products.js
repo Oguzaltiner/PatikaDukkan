@@ -7,6 +7,7 @@ import {
   ActivityIndicator,
   View,
   StyleSheet,
+  Button
 } from 'react-native';
 import envs from '../../config/env';
 
@@ -17,9 +18,11 @@ import useFetch from '../../hooks/useFetch/useFetch';
 
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
+import { useDispatch } from 'react-redux';
 
 const Products = ({navigation}) => {
   // console.log(envs);
+  const dispatch =useDispatch();
   const {API_PRODUCT_URL} = envs;
   const handleProductSelect = id => {
     navigation.navigate('DetailPage', {id});
@@ -57,13 +60,15 @@ const Products = ({navigation}) => {
   }
   return (
     <SafeAreaView>
-      <FlatList
+      {/* <Button title="LogOut" onPress={() => dispatch({type:'SET_USER',payload:{user:null}})} /> */}
+
+      {/* <FlatList
         style={styles.categoryList}
         numColumns={3}
         contentContainerStyle={{paddingTop: 5, paddingBottom: 10}}
         data={categoryList}
         renderItem={renderCategory}
-      />
+      /> */}
       <FlatList
         data={newData == '' ? data : newData}
         renderItem={renderProduct}
