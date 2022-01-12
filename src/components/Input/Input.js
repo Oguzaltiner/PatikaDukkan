@@ -6,7 +6,7 @@ import styles from './Input.style';
 const Input = ({placeholder,value,onType,iconName,isSecure}) =>{
     return(
         <View style={styles.container}>
-            <TextInput style={styles.icon} secureTextEntry={isSecure} placeholder={placeholder} onChangeText={onType} value={value} />
+            <TextInput style={styles.icon} secureTextEntry={isSecure} placeholder={placeholder} onChangeText={onType} value={value} autoCapitalize='none' />
             <Icon name={iconName} size={25} color="gray" />
         </View>
     );

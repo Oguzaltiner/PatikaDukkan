@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import Wrapper from './src/Wrapper';
+import App from './src/App';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Wrapper);
+AppRegistry.registerComponent(appName, () => App);

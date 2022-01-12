@@ -4,13 +4,16 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import styles from './Button.style';
 
-const Button = ({text, onPress, loading}) => {
+const Button = ({text, onPress, loading,thema="primary"}) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress} disabled={loading}>
+    <TouchableOpacity
+      style={styles[thema].container}
+      onPress={onPress}
+      disabled={loading}>
       {loading ? (
         <ActivityIndicator color="white" />
       ) : (
-        <Text style={styles.title}>{text}</Text>
+        <Text style={styles[thema].title}>{text}</Text>
       )}
     </TouchableOpacity>
   );

@@ -1,8 +1,7 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import colors from '../../styles/colors';
 
 export default StyleSheet.create({
-  container: {flex: 1, backgroundColor: 'white'},
+  container: {flex: 1, backgroundColor: '#64b5f6'},
   logo: {
     height: Dimensions.get('window').height / 4,
     width: Dimensions.get('window').width * 0.9,
@@ -16,10 +15,5 @@ export default StyleSheet.create({
   },
   body_container: {
     flex: 1,
-  },
-  header:{
-        color:colors.darkgreen,
-        margin:5,
-        fontSize:160,
   },
 });
